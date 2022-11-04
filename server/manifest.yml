@@ -1,10 +1,10 @@
   applications:
-  - name: djangoapp
+  - name: djangoapp-final
     routes:
       - route: $HOST.$DOMAIN
     memory: 128M
     buildpack: python_buildpack
-  - name: djangoapp-nginx
+  - name: djangoapp-nginx-final
     routes:
       - route: $HOST.$DOMAIN/static
     memory: 128M

@@ -7,7 +7,7 @@ env:
   IBM_CLOUD_REGION: us-south
   IBM_CLOUD_GROUP: default
   IBM_CLOUD_SPACE: djangoserver-space
-  IBM_CLOUD_ORG: PisgreaterthanAfitness@gmail.com 
+  IBM_CLOUD_ORG: JJProjects 
   MANIFEST_NAME: manifest.yml
   IBM_CLOUD_API: O-V6q6DfKV-1E_jsyt-pXZI0YZWhMyV7DZerx5T77LOX
 

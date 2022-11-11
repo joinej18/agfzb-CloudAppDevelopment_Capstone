@@ -100,3 +100,8 @@ def get_dealer_details(request, dealer_id):
 
 # Create a `add_review` view to submit a review
 def add_review(request, dealer_id):
+     if request.method=="GET":
+          cars
+     if request.method=="POST":
+     return redirect("djangoapp:dealer_details", dealer_id=dealer_id)
+     

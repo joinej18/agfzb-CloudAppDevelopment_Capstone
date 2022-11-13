@@ -7,7 +7,7 @@ from requests.auth import HTTPBasicAuth
 
 def analyze_review_sentiments(text):
     url = "https://api.us-south.natural-language-understanding.watson.cloud.ibm.com/instances/dbd384e8-d9b0-43f6-86d6-ea8321437838"
-    api_key = "JOC38-LiPAqnSJBkqKKKddes5lY5fcPkKDG5yYCD5vlX"
+    api_key = ""
     authenticator = IAMAuthenticator(api_key)
     natural_language_understanding = NaturalLanguageUnderstandingV1(version='2021-08-01',authenticator=authenticator)
     natural_language_understanding.set_service_url(url)

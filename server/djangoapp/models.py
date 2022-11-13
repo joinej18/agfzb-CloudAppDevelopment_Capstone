@@ -11,11 +11,11 @@ from django.utils.timezone import now
 # - __str__ method to print a car make object
 
 class CarMake(models.Model):
-    name = models.CharField(null=False, max_length=100, default='Make')
+    name = models.CharField(null=False, max_length=20, default='undefined')
     description = models.CharField(max_length=500)
 
     def __str__(self):
-        return "Name: " + self.name
+        return self.name + ":" + self.description
 
 # <HINT> Create a Car Model model `class CarModel(models.Model):`:
 # - Many-To-One relationship to Car Make model (One Car Make has many Car Models, using ForeignKey field)
@@ -26,18 +26,28 @@ class CarMake(models.Model):
 # - __str__ method to print a car make object
 
 class CarModel(models.Model):
+    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
+    name = models.CharField(null=False, max_length=40, default='undefined')
     id = models.IntegerField(default=1,primary_key=True)
-    name = models.CharField(null=False, max_length=100, default='Car')
    
     SEDAN = 'Sedan'
     SUV = 'SUV'
     WAGON = 'Wagon'
     MINIVAN = 'Minivan'
+    COUPE = 'Coupe'
+    SPORTS = 'Sports'
+    HATCHBACK = 'Hatchback'
+    CONVERTIBLE = 'Convertible'
+
     CAR_TYPES = [
         (SEDAN, 'Sedan'),
         (SUV, 'SUV'),
         (WAGON, 'Wagon'),
-        (MINIVAN, 'Minivan')
+        (MINIVAN, 'Minivan'),
+        (COUPE, 'Coupe'),
+        (SPORTS, 'Sports'),
+        (HATCHBACK, 'Hatchback'),
+        (CONVERTIBLE, 'Convertible'),
     ]
 
     type = models.CharField(
@@ -46,11 +56,9 @@ class CarModel(models.Model):
         choices=CAR_TYPES,
         default=SEDAN
     )
-    make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
-    year = models.DateField(default=now)
-
+    year = models.DateField(null=False)
     def __str__(self):
-        return "Name: " + self.name
+        return self.type
 
 
 

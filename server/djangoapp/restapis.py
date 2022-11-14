@@ -7,7 +7,7 @@ from requests.auth import HTTPBasicAuth
 
 def analyze_review_sentiments(text):
     url = "https://api.us-south.natural-language-understanding.watson.cloud.ibm.com/instances/dbd384e8-d9b0-43f6-86d6-ea8321437838"
-    api_key = ""
+    api_key = "O-V6q6DfKV-1E_jsyt-pXZI0YZWhMyV7DZerx5T77LOX"
     authenticator = IAMAuthenticator(api_key)
     natural_language_understanding = NaturalLanguageUnderstandingV1(version='2021-08-01',authenticator=authenticator)
     natural_language_understanding.set_service_url(url)
@@ -21,25 +21,19 @@ def analyze_review_sentiments(text):
 
 def get_dealers_from_cf(url, **kwargs):
     results = []
-    state = kwargs.get("state")
-    if state:
-        json_result = get_request(url, state=state)
-    else:
-        json_result = get_request(url)
-    # print(json_result)    
-
+    # Call get_request with a URL parameter
+    json_result = get_request(url)
     if json_result:
         # Get the row list in JSON as dealers
-        dealers = json_result
+        dealers=json_result      
         # For each dealer object
         for dealer in dealers:
             # Get its content in `doc` object
             dealer_doc = dealer["doc"]
-            # print(dealer_doc)
             # Create a CarDealer object with values in `doc` object
-            dealer_obj = CarDealer(address=dealer_doc["address"], city=dealer_doc["city"],
+            dealer_obj = CarDealer(address=dealer_doc["address"], city=dealer_doc["city"], full_name=dealer_doc["full_name"],
                                    id=dealer_doc["id"], lat=dealer_doc["lat"], long=dealer_doc["long"],
-                                    full_name=dealer_doc["full_name"], short_name=dealer_doc["short_name"],
+                                   short_name=dealer_doc["short_name"],
                                    st=dealer_doc["st"], zip=dealer_doc["zip"])
             results.append(dealer_obj)
 

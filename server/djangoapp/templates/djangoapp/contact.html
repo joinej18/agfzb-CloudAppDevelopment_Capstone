@@ -14,14 +14,14 @@
 </head>
 
     <body>
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
-                <div class="navbar-header">
-                    <ul class="nav navbar-nav navbar-right">
-                    <a class="navbar-brand" href="#">Dealership Contact Us Page</a>
-                    <a class= "btn btn-link" href="index.html"> Index Page</a> <a class="btn btn-link" href="about.html"> About Us </a>
-                    </ul>
+                <div class="navbar-header"> 
+                    <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Dealership Review</a>
+                    <a class="navbar-brand" href="{% url 'djangoapp:about' %}">About us</a>
+                    <a class="navbar-brand" href="{% url 'djangoapp:contact' %}">Contact Us</a>
                 </div>
+        </nav>
                 
                 <html>
                     <h1>

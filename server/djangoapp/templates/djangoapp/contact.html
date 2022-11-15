@@ -24,17 +24,39 @@
         </nav>
                 
                 <html>
-                    <h1>
-                    Dealership Address: 
-                        123 Hidden Dealership Village
-                        Konoha, CA 98852
-
-                        To contact us by phone:888-888-8888
-
-                        To contact us by e-mail:dealersdeal@dealership.com
-                    </h1>
+                    <h2>Dealership Contact Details </h2>
+                    
                     </html>
-    
+            <div class="container-fluid">
+                <form class ="form-group-horizontal">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Dealership Address</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">Come visit us:</h6>
+                          <p class="card-text">123 Hidden Dealership Village
+                            Konoha, CA 98852</p>
+                            <a href="{% url 'djangoapp:registration' %}" class="card-link">Sign up to give a review</a>
+                          <a href="{% url 'djangoapp:about' %}" class="card-link">About Us</a>
+                        </div>
+                      </div>
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Have Questions</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">give us a call</h6>
+                          <p class="card-text">phone:888-888-8888</p>
+                          <a href="{% url 'djangoapp:registration' %}" class="card-link">Sign up to give a review</a>
+                        </div>
+                      </div>
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Email</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">Send us an email</h6>
+                          <p class="card-text">e-mail:dealersdeal@dealership.com</p>
+                          <a href="{% url 'djangoapp:registration' %}" class="card-link">Sign up to give a review</a>
+                        </div>
+                      </div>
+                </form>
+            </div>
 
     </body>
 

@@ -14,20 +14,72 @@
                     <a class="navbar-brand" href="{% url 'djangoapp:about' %}">About us</a>
                     <a class="navbar-brand" href="{% url 'djangoapp:contact' %}">Contact Us</a>
                 </div>
+        </nav>
     <!--Add a registration form here -->
-    </body>
-    <div class="container-fluid">
-        <form class ="form-inline form-horizontal">
-        <input type="text" class="form-control" placeholder='Enter User Name'>
+   
+    <div>
+    <h2> Sign Up </h2>
+    </div>
 
-        <input type="text" class="form-control" placeholder='Enter First Name'> 
-        <input type="text" class="form-control" placeholder='Enter Last Name'> 
-        <input type="text" class="form-control" placeholder='Enter Password:'> 
-        <button class="btn btn-primary btn btn-link btn btn-dark" href="{% url 'djangoapp:registration' %}" type="submit">
+    <div class="container-fluid">
+        <form class ="form-group-vertical-inline">
+        <div> 
+            <label for="validationCustom01"><h6><strong> User Name </strong></h6></label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Enter Username" value="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+        </div>
+        <div> 
+            <label for="validationCustom01"><h6> <strong> First Name </strong> </h6></label>
+      <input type="text" class="form-control" id="validationCustom01" placeholder="Enter First Name" value="" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+        </div>
+        <div> 
+            <label for="validationCustom01"><h6> <strong> Last Name </strong></h6></label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Enter Last Name" value="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div> 
+        </div>
+        <div>
+            <label for="validationCustom01"><h6> <strong> Password </strong> </h6></label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Enter Password" value="" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+        </div>
+        <div>
+        <button class="btn btn-outline btn btn-secondary" href="{% url 'djangoapp:index' %}" type="submit">
             <label> Sign Up </label>
     <!--<a alternate code for signup button class="btn btn-link" href="{% url 'djangoapp:registration' %}">Sign Up</a>-->
         </button>
+        </div>
        
         </form>
         </div>
+        <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+    </body>
+
 </html>

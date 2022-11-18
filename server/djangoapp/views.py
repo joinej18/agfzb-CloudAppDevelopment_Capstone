@@ -67,7 +67,8 @@ def registration_request(request):
         except:
             logger.error("New User")
         if not user_exist:
-            user = User.objects.create_user(username=username, firstname=first_name, lastname=last_name, password=password)
+            user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name,
+                    password=password)
             user.is_superuser=True
             user.is_staff=True
             user.save()
@@ -87,6 +88,7 @@ def get_dealerships(request):
         # Concat all dealer's short name
         dealer_names = ' '.join([dealer.full_name for dealer in dealerships])
         # Return a list of dealer short name
+        context["dealership_list"] = dealerships
         return render(request, 'djangoapp/index.html', context)
 
 

@@ -44,7 +44,7 @@ def get_dealer_by_id_from_cf(url, id):
     json_result = get_request(url, id=id)
     
     if json_result:
-        dealers = json_result["body"]
+        dealers = json_result
         
     
         dealer_doc = dealers["docs"][0]

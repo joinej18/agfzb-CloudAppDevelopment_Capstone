@@ -100,7 +100,7 @@ def get_dealer_details(request, id):
         dealer = get_dealer_by_id_from_cf(dealer_url, id=id)
         context["dealer"] = dealer
     
-        review_url = "https://us-south.functions.appdomain.cloud/api/v1/web/JJProjects_Cloud%20Projects/dealership-package/get-review"
+        review_url = "https://us-south.functions.appdomain.cloud/api/v1/web/JJProjects_Cloud%20Projects/dealership-package/get-reviews"
         reviews = get_dealer_reviews_from_cf(review_url, id=id)
         print(reviews)
         context["reviews"] = reviews
@@ -116,7 +116,7 @@ def add_review(request, id):
     if request.method == 'GET':
         # Get cars for the dealer
         cars = CarModel.objects.filter(id=id)
-        print(cars)
+        #print(cars)
         context["cars"] = cars
         
         return render(request, 'djangoapp/add_review.html', context)

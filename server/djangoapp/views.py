@@ -56,20 +56,21 @@ def registration_request(request):
     if request.method == 'GET':
         return render(request, 'djangoapp/registration.html', context)
     elif request.method == 'POST':
-        username=request.POST['username']
-        password=request.POST['psw']
-        first_name=request.POST['firstname']
-        last_name=request.POST['lastname']
+        # Check if user exists
+        username = request.POST['username']
+        password = request.POST['psw']
+        #first_name = request.POST['firstname']
+        #last_name = request.POST['lastname']
         user_exist = False
         try:
             User.objects.get(username=username)
             user_exist = True
         except:
-            logger.error("New User")
+            logger.error("New user")
         if not user_exist:
-            user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name,
-                    password=password)
-            user.is_superuser=True
+            user = User.objects.create_user(username=username, #first_name=first_name, last_name=last_name,
+                                            password=password)
+            user.is_superuser = True
             user.is_staff=True
             user.save()
             login(request, user)

@@ -27,7 +27,7 @@ DEBUG = True
 
 APPEND_SLASH = True
 
-ALLOWED_HOSTS = ["localhost", "madarasdealership.us-south.cf.appdomain.cloud"]
+ALLOWED_HOSTS = ["localhost", 'localhost:8000', "madarasdealership.us-south.cf.appdomain.cloud"]
 CSRF_TRUSTED_ORIGINS = ['https://joinej18me-8000.theiadocker-3-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai',"https://e2c600de-c509-4412-b0e5-b4d562c220cf-bluemix.cloudantnosqldb.appdomain.cloud",'https://*.127.0.0.1']
 
 # Application definition

@@ -18,7 +18,6 @@
     <!--Add a registration form here -->
    
     <form action="{% url 'djangoapp:registration' %}" method="post">
-        <div class="container">
           {% csrf_token %}
           <h1>Sign Up</h1>
           <hr>
@@ -31,7 +30,6 @@
               <input type="text" class="form-control" placeholder="Enter Last Name: " name="lastname" required>
               <label for="psw"><b>Password</b></label>
               <input type="password" class="form-control", placeholder="Enter Password: " name="psw" required>
-            </div>
             <div>
               <button class="btn btn-primary" type="submit">Sign up</button>
             </div>

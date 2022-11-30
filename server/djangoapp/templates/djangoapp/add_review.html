@@ -26,7 +26,7 @@
                 </li>
                 {% else %}
                 <li>
-                    <form class="form-inline" action="{% url 'djangoapp:registration' %}" method="post">
+                    <form class="form-inline" action="{% url 'djangoapp:login' %}" method="post">
                         {% csrf_token %}
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Username" name="username" >

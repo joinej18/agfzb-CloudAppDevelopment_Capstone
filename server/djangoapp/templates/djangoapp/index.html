@@ -37,6 +37,13 @@
                                 <a class="btn btn-link" href="{% url 'djangoapp:registration' %}">Sign Up</a>
                             </div>
                         </form>
+                    </div>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-warning" role="alert">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
                     </li>
                     {% endif %}
                 </ul>
